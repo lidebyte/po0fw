@@ -158,6 +158,9 @@ details .bd{padding:0 4px 18px;font-size:14px;color:var(--ink2)}
 
 footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--ink3);font-size:13px}
 footer a{color:var(--ink2)}
+.community-option{margin:20px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13px;line-height:1.8;color:var(--ink2)}
+.community-option b{font-weight:600;color:var(--ink2)}
+.community-option a{text-underline-offset:3px}
 </style>
 </head>
 <body>
@@ -262,6 +265,7 @@ PO0FW_TOKENS="<span class="tk" data-t>pgnfw_你的token</span>" sh /tmp/i.sh</pr
 powershell -ExecutionPolicy Bypass -File i.ps1 -Tokens "<span class="tk" data-t>pgnfw_你的token</span>"</pre></div>
       <div class="stepbody">注册计划任务：每 10 分钟 + 网络连接事件双触发。</div>
       <div class="note"><b>常用命令：</b><code>po0fw</code> 立即加白 · <code>po0fw status</code> 查看白名单 · 改 token 编辑 <code>/etc/po0fw.conf</code>（Windows 为 <code>%ProgramData%\po0fw\po0fw.conf</code>）。</div>
+      <p class="community-option"><b>可选社区客户端：</b>如果愿意更换代理客户端，也可了解集成了加白功能的 <a href="https://wiki.uuuz.de/guide/clients/po0-clash">po0-clash（Windows / macOS）</a>，由社区作者独立维护。<a href="https://github.com/yuuuki-creation/po0-clash/releases/latest" rel="noopener noreferrer" target="_blank">作者发布页 ↗</a>。保留现有客户端时，继续使用上面的独立脚本即可。</p>
     </div>
 
     <!-- 安卓 -->
@@ -273,7 +277,8 @@ powershell -ExecutionPolicy Bypass -File i.ps1 -Tokens "<span class="tk" data-t>
       <div class="stepbody">触发器「<b>定期触发</b>」间隔 15 分钟，同样的 HTTP POST 动作，再加一个「网络已连接」约束。这个宏负责捕捉<b>静默换 IP</b>（Wi-Fi 没断但公网 IP 变了、蜂窝换 IP）。</div>
       <div class="stepline"><span class="no">3</span><h3>关闭电池优化</h3></div>
       <div class="stepbody">按 MacroDroid 引导给它加电池白名单，否则后台定时会被系统杀掉。</div>
-      <div class="note"><b>其他选择：</b>HTTP Shortcuts（开源，定时 POST + 桌面小部件一键加白）；Termux 用户直接跑 PC 页的 Linux 命令（自动识别 Termux，装完 <code>sv-enable crond</code>）。安卓代理客户端（Clash 系）没有脚本引擎，所以用自动化 App 实现，效果相同且不挑客户端。</div>
+      <div class="note"><b>其他选择：</b>HTTP Shortcuts（开源，定时 POST + 桌面小部件一键加白）；Termux 用户直接跑 PC 页的 Linux 命令（自动识别 Termux，装完 <code>sv-enable crond</code>）。保留现有安卓客户端时，可继续使用这些独立自动化方案。</div>
+      <p class="community-option"><b>可选社区客户端：</b><a href="https://wiki.uuuz.de/guide/clients/po0-clash">po0-clash（Android）</a> 内置加白功能，由社区作者独立维护，应用运行期间检查白名单。首次启用后需重启一次 VPN。<a href="https://github.com/yuuuki-creation/po0-clash/releases/latest" rel="noopener noreferrer" target="_blank">作者发布页 ↗</a>。凭证直接在客户端填写，同一设备通常无需重复安装独立脚本。</p>
     </div>
 
     <!-- iOS -->
